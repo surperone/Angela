@@ -21,8 +21,8 @@ function angela_scripts() {
 
     // Load our main stylesheet.
     wp_enqueue_style( 'angela-style', get_stylesheet_uri() );
-    wp_enqueue_script( 'global', get_bloginfo('template_directory') . '/static/js/global.js' , array(), CRYSTAL_VERSION, false);
-    wp_localize_script( 'global', 'Crystal', array(
+    wp_enqueue_script( 'global', get_bloginfo('template_directory') . '/static/js/global.js' , array(), '1.0.0', false);
+    wp_localize_script( 'global', 'Angela', array(
         "comment" => get_bloginfo('template_directory') . '/static/js/comment.js',
         "ajax" => admin_url() . "admin-ajax.php",
         "loading" =>get_bloginfo('template_directory') . '/static/img/loading.gif',
