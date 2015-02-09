@@ -70,62 +70,6 @@ function angela_is_has_image($post_id){
 
 }
 
-add_action('init', 'post_type_laws');
-
-function post_type_laws() {
-    register_post_type(
-        'reads',
-        array( 'public' => true,
-            'has_archive' => true,
-            'labels'=>array(
-                'name' => '文摘',
-                'singular_name' => 'reads',
-                'add_new' => '添加新文摘',
-                'add_new_item' => '添加新文摘',
-                'edit_item' => '编辑文摘',
-                'new_item' => '新的文摘',
-                'view_item' => '预览文摘',
-                'search_items' => '搜索文摘',
-                'not_found' =>  '您还没有发布文摘',
-                'not_found_in_trash' => '回收站中没有文摘',
-                'parent_item_colon' => ''
-            ),
-            'show_ui' => true,
-            'menu_position'=>5,
-            'supports' => array(
-                'title',
-                'author',
-                'excerpt',
-                'thumbnail',
-                'trackbacks',
-                'editor',
-                'comments',
-                'custom-fields',
-                'revisions'	) ,
-            'show_in_nav_menus'	=> true ,
-            'taxonomies' => array('category', 'post_tag')
-        )
-    );
-}
-
-add_filter('post_type_link', 'wpse33551_post_type_link', 1, 3);
-
-function wpse33551_post_type_link( $link, $post = 0 ){
-    if ( $post->ID == 74818 ){
-        return home_url(  'oconnor.html' );
-    } else if ( $post->ID == 74821 ){
-        return home_url(  '3631.html'  );
-    } else if ( $post->ID == 74479 ){
-        return home_url(  'pure.html'  );
-    } else if ( $post->post_type == 'help' ){
-        return home_url(  'help/' .$post->ID );
-    } else if ( $post->post_type == 'reads' ){
-        return home_url(  'reads/' .$post->ID );
-    } else {
-        return $link;
-    }
-}
-
 add_action( 'wp_ajax_nopriv_angela_ajax_comment', 'angela_ajax_comment');
 add_action( 'wp_ajax_angela_ajax_comment', 'angela_ajax_comment' );
 function angela_ajax_comment(){
