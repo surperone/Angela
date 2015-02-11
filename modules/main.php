@@ -1,4 +1,6 @@
 <?php
+register_nav_menu( 'angela', 'Angela菜单' );
+
 function angela_title( $title, $sep ) {
     global $paged, $page, $wp_query,$post;
 

@@ -25,10 +25,7 @@
 <body <?php body_class();?>>
 <div id="canvas-menu">
     <div class="menu-inner angelaContainer">
-        <ul class="menu">
-            <li class="current"><a href="/">Home</a></li>
-            <li><a href="/about">About</a></li>
-        </ul>
+        <?php wp_nav_menu( array( 'theme_location' => 'angela','menu_class'=>'menu','container'=>'ul')); ?>
     </div>
 </div>
 <div id="surface-content">
