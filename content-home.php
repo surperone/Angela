@@ -13,7 +13,7 @@
         <a class="block-image" href="<?php the_permalink();?>" style="background-image:url(<?php echo angela_get_background_image($post->ID);?>)"></a>
     <?php endif;?>
     <h2 class="angela-title"><a href="<?php the_permalink();?>" title="<?php the_title();?>"><?php the_title();?></a></h2>
-    <div class="block-snippet block-snippet--subtitle"><?php echo mb_strimwidth(strip_tags($post->post_content), 0, 120,"...");?></div>
+    <div class="block-snippet block-snippet--subtitle"><?php echo mb_strimwidth(strip_shortcodes(strip_tags($post->post_content)), 0, 120,"...");?></div>
     <div class="v-clearfix block-postMetaWrap">
         <div class="block-postMeta">
             <div class="postMetaInline-avatar">
